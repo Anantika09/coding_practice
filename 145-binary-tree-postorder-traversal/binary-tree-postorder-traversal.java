@@ -24,7 +24,6 @@ class Solution {
             return;
         }
         trev(root.left,ans);
-        // ans.add(root.val);
         trev(root.right,ans);
         ans.add(root.val);
     
