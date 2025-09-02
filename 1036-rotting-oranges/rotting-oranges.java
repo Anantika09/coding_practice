@@ -7,22 +7,18 @@ class Solution{
     
     static int bfs_mat(int[][] grid, Queue<int[]> q, int fresh, int rows, int cols){
         int minutes = -1;        
-        int dr[] = {0, 1, 0, -1};
-        int dc[] = {1, 0, -1, 0};
-        
+        int dr[]={0, 1, 0, -1};
+        int dc[]={1, 0, -1, 0};
         while(!q.isEmpty()){
             int size = q.size();
             minutes++;
-            
             for(int s=0; s<size; s++){
                 int[] curr = q.poll();
                 int r = curr[0];
                 int c = curr[1];
-                
                 for(int i=0;i<dr.length;i++){
                     int nr = r + dr[i];
                     int nc = c + dc[i];
-                    
                     if(isValid(nr,nc,rows,cols,grid)){
                         grid[nr][nc] = 2;  
                         fresh--;
@@ -31,15 +27,12 @@ class Solution{
                 }
             }
         }
-        
         if(fresh == 0){
             return minutes;
         } else {
             return -1;
         }
     }
-    
-   
     static int bfs_all(int[][] grid){
         int rows = grid.length;
         int cols = grid[0].length;
