@@ -1,3 +1,4 @@
+// by using Sieve of Eratosthenes algorithm 
 class Solution {
     public int countPrimes(int n) {
         boolean p[]=new boolean[n+2];
