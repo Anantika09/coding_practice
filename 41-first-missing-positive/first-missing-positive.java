@@ -4,12 +4,11 @@ class Solution {
         for(int num:nums){
             set.add(num);
         }
-        int ans=1;
-        while(true){
-            if(!set.contains(ans)){
-                return ans; 
+        for(int i=1;i<=nums.length+1;i++){
+            if(!set.contains(i)){
+                return i; 
             }
-            ans++;
         }
+        return nums.length;
     }
 }
