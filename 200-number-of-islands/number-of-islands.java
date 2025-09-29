@@ -16,9 +16,12 @@ class Solution {
             return;
         }
         grid[r][c]='0';
-        clear(grid,r+1,c);
-        clear(grid,r-1,c);
-        clear(grid,r,c+1);
-        clear(grid,r,c-1);
+        int dr[]={1,-1,0,0};
+        int dc[]={0,0,1,-1,};
+        for(int i=0;i<dr.length;i++){
+            int row=r+dr[i];
+            int col=c+dc[i];
+            clear(grid,row,col);
+        }
     }
 }
