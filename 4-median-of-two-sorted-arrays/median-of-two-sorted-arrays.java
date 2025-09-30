@@ -13,12 +13,12 @@ class Solution {
         return (double)res[res.length/2];
     }
 
-        int[] sortedMerge(int[] arr1, int[] arr2) {
-        int n = arr1.length;
-        int m = arr2.length;
-        int[] res = new int[m + n];
-        System.arraycopy(arr1, 0, res, 0, n);
-        System.arraycopy(arr2, 0, res, n, m);
+    public static int[] sortedMerge(int[] arr1, int[] arr2) {
+        int n=arr1.length;
+        int m=arr2.length;
+        int[] res=new int[m+n];
+        System.arraycopy(arr1,0,res,0,n);
+        System.arraycopy(arr2,0,res,n,m);
         Arrays.sort(res);
         return res;
     }
