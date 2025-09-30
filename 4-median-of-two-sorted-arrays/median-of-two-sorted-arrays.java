@@ -2,24 +2,25 @@ class Solution {
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
         int m=nums1.length;
         int n=nums2.length;
-        int[] res=sortedMerge(nums1,nums2);
-        double ans=0;
-        if(res.length==2){
-            
+        List<Integer> res=sortedMerge(nums1,nums2);
+        int size=res.size();
+        if(size%2==0){
+            return(res.get(size/2-1)+res.get(size/2))/2.0;
+        } 
+        else{
+            return res.get(size/2);
         }
-        if(res.length%2==0){
-            return (double)(res[(res.length/2)-1]+res[res.length/2])/2;
-        }
-        return (double)res[res.length/2];
     }
 
-    public static int[] sortedMerge(int[] arr1, int[] arr2) {
-        int n=arr1.length;
-        int m=arr2.length;
-        int[] res=new int[m+n];
-        System.arraycopy(arr1,0,res,0,n);
-        System.arraycopy(arr2,0,res,n,m);
-        Arrays.sort(res);
+    public static List<Integer> sortedMerge(int[] arr1, int[] arr2) {
+        List<Integer> res=new ArrayList<>();
+        for(int n:arr1){
+            res.add(n);
+        }
+        for(int n:arr2){
+            res.add(n);
+        }
+        Collections.sort(res);
         return res;
     }
 }
