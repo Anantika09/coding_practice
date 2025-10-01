@@ -3,7 +3,7 @@ class Solution {
         int start=0;
         int end=0;
         int ans=0;
-        int freq[]=new int[256];
+        int[] freq=new int[256];
         int n=s.length();
         while(end<n){
             char ch=s.charAt(end);
