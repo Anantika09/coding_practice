@@ -26,10 +26,14 @@ class Solution {
         if(start>end){
             return null;
         }
+        //pick root from preorder
         int rootval=preorder[pre++];
         TreeNode root=new TreeNode(rootval);
+        //find root in inorder
         int idx=map.get(rootval);
+        //build left subtree
         root.left=build(preorder,start,idx-1);
+        ///build right subtree
         root.right=build(preorder,idx+1,end);
         return root;
     }
