@@ -5,16 +5,23 @@ class Solution {
         for(int i=0;i<isConnected.length;i++){
             if(visited[i]==0){
                 ans++;
-                dfs(i,visited,isConnected);
+                bfs(i,visited,isConnected);
             }
         }
         return ans;
     }
-    public void dfs(int i, int visited[], int connect[][]){
+    public void bfs(int i, int visited[], int connect[][]){
+        boolean[] vis=new boolean[i];
+        Queue<Integer> q=new LinkedList<>();
+        q.add(i);
         visited[i]=1;
-        for(int j=0;j<connect.length;j++){
-            if(visited[j]==0 && connect[i][j]==1){
-                dfs(j,visited,connect);
+        while(!q.isEmpty()){
+            int node=q.poll();
+            for(int j=0;j<connect.length;j++){
+                if(connect[node][j]==1 && visited[j]==0){
+                    visited[j]=1;
+                    q.add(j);
+                }
             }
         }
     }
