@@ -1,5 +1,3 @@
-import java.util.*;
-
 class Solution {
     public int robotSim(int[] commands, int[][] obstacles) {
         Set<String> b=new HashSet<>();
