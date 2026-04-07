@@ -5,16 +5,17 @@ class Solution {
             b.add(o[0]+ "," +o[1]);
         }
         int[][] dir={{0,1},{1,0},{0,-1},{-1,0}};
-        int x=0,y=0;
+        int x=0;
+        int y=0;
         int d=0; 
         int max=0;
         for(int c:commands){
             if(c==-1){
                 d=(d+1)%4;
-            } 
+            }
             else if(c==-2){
-                d=(d+3)%4; 
-            } 
+                d=(d+3)%4;
+            }
             else{
                 while(c-->0){
                     int nx=x+dir[d][0];
