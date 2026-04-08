@@ -1,14 +1,16 @@
 class Solution {
     public int maxSatisfaction(int[] arr) {
         Arrays.sort(arr);
-        int sum=0;
+        int n=arr.length;
         int ans=0;
-        for(int i=arr.length-1;i>=0;i--){
-            sum+=arr[i];
-            if(sum<0){
-                break;
+        for(int i=0;i<n;i++){
+            int time=1;
+            int curr=0;
+            for(int j=i;j<n;j++){
+                curr+=arr[j]*time;
+                time++;
             }
-            ans+=sum;
+            ans=Math.max(ans,curr);
         }
         return ans;
     }
